@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class PageController {
 
     @RequestMapping("/home")
-    public String home(Model model){
+    public String home(Model model) {
         System.out.println("Home page Handler");
 
         // Sending data to view
