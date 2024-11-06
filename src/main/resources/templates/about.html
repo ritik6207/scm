@@ -1,40 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" th:replace="~{base :: parent(~{::#content}, ~{::title}, ~{::script})}">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About</title>
+    <title>about Page</title>
   </head>
   <body>
-    <h1>This is About Page</h1>
-    <hr />
-    <!--! Using insert fragment -->
-    <!-- <div class="host-tag" th:insert="~{base :: parent('one', 'two')}"></div> -->
-
-    <!--! Using replace fragment -->
-    <!-- <div class="host-tag" th:replace="~{base :: parent}"></div> -->
-
-    <!--! pass whole html using fragment -->
-    <div
-      class="host-tag"
-      th:insert="${isActive} ? ~{base :: parent(~{::section})} : ~{base :: test(~{::#not_login})}"
-    >
-      <section>
-        <h1>User logged in..</h1>
-        <h1>This is Dynamic content html using fragment</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-          officiis quibusdam amet eligendi facilis veniam illum consectetur
-          minus quaerat modi at, doloremque laudantium iusto ab? Eligendi
-          quaerat atque cumque distinctio!
-        </p>
-        <button>Click here</button>
-      </section>
-
-      <section id="not_login">
-        <h1>User not Logged in...</h1>
-        <button>Go to Logged in </button>
-      </section>
+    <div id="content">
+      <h1>Welcome to about page</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, neque.</p>
     </div>
+
+    <script>
+        console.log("About Page")
+    </script>
+    <script>
+        console.log("Second About Page")
+    </script>
   </body>
 </html>

@@ -1,30 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" th:replace="~{base :: parent(~{::#content}, ~{::title}, ~{::script})}">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HomePage</title>
-    <link rel="stylesheet" data-th-href="@{'/css/output.css'}" />
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+    <title>Home Page</title>
   </head>
   <body>
-    <div class="container bg-gray-200 w-1/2 p-4 mx-auto mt-4">
-      <h1 class="text-2xl font-bold text-blue-500" data-th-text="${name}">Welcome to Home Page</h1>
-      <p class="text-xl text-gray-700">YouTube Channel : <span data-th-text="${youTube}"></span></p>
-      <p>GitHub Repo : <span th:text="${gitHubRepo}"></span></p>
-      <a th:href="${gitHubRepo}">Click here to open GitHub</a>
-      <p class="text-gray-600">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Non dolorem ut
-        nisi maiores quas minus, voluptatum, saepe unde iure quo ex repellendus
-        perferendis rem illo harum culpa consectetur incidunt nobis facilis,
-        fugit temporibus molestias in. Numquam quibusdam sint, rem nobis vitae,
-        tempore, molestiae neque quisquam saepe nemo architecto molestias
-        sapiente.
+    <div id="content">
+      <h1>Welcome to home page</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, neque.
       </p>
     </div>
-    <!-- FloBite content added here -->
-     <!-- Card -->
-      
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <script>
+        console.log("Home page")
+    </script>
   </body>
 </html>

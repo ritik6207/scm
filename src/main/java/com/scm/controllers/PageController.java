@@ -15,7 +15,7 @@ public class PageController {
         model.addAttribute("name", "subString Technology");
         model.addAttribute("youTube", "TechLearn");
         model.addAttribute("gitHubRepo", "https://github.com/ritik6207");
-        return "Home";
+        return "home";
     }
 
 
