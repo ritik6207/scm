@@ -1,0 +1,28 @@
+<!--! Pass with parameter form about page -->
+<!-- <div class="parent-tag" th:fragment="parent(x,y)">
+  <h1>This is parent fragment page</h1>
+  <p>
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident porro
+    eaque commodi voluptatibus non voluptate excepturi sit totam dicta eveniet
+    praesentium illo quaerat, unde quibusdam nam nostrum. Praesentium, voluptas
+    dolorem.
+  </p>
+  <h1>Value of x is <samp th:text="${x}"></samp></h1>
+  <h1>Value of y is <samp th:text="${y}"></samp></h1>
+</div> -->
+
+<!--! Pass with parameter form about page -->
+<div class="parent-tag" th:fragment="parent(content)">
+  <h1>This is parent fragment page</h1>
+  <p>
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident porro
+    eaque commodi voluptatibus non voluptate excepturi sit totam dicta eveniet
+    praesentium illo quaerat, unde quibusdam nam nostrum. Praesentium, voluptas
+    dolorem.
+  </p>
+  <div th:replace="${content}"></div>
+</div>
+
+<div th:fragment="test(content)">
+  <div th:replace="${content}"></div>
+</div>

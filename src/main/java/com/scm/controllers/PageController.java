@@ -17,4 +17,20 @@ public class PageController {
         model.addAttribute("gitHubRepo", "https://github.com/ritik6207");
         return "Home";
     }
+
+
+    // about page
+    @RequestMapping("/about")
+    public String aboutPage(Model model){
+        model.addAttribute("isActive", false);
+        System.out.println("About page loading..");
+        return "about";
+    }
+
+    // services page
+    @RequestMapping("/service")
+    public String servicesPage(){
+        System.out.println("Services page loading..");
+        return "services";
+    }
 }
