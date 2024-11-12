@@ -1,39 +1,40 @@
 <!DOCTYPE html>
-<html lang="en" th:fragment="parent(content,title, script)" xmlns:th="http://www.thymeleaf.org">
+<html
+  class="light"
+  lang="en"
+  th:fragment="parent(content,title, script)"
+  xmlns:th="http://www.thymeleaf.org"
+>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title th:replace="${title}">Base page</title>
     <link rel="stylesheet" data-th-href="@{'/css/output.css'}" />
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
-  </head>
-  <body>
+  <body class="dark:bg-gray-900 dark:text-white">
     <!-- common header -->
-    <ul class="p-4">
-        <li>
-            <a data-th-href="@{'/home'}">Home</a>
-        </li>
-        <li>
-            <a data-th-href="@{'/about'}">About</a>
-        </li>
-        <li>
-            <a data-th-href="@{'/service'}">Services</a>
-        </li>
-        
-        
-    </ul>
+    <div th:replace="~{navbar :: navbar}"></div>
     <!-- Main content -->
     <div class="p-4">
-        <section th:replace="${content}"></section>
+      <section th:replace="${content}"></section>
     </div>
 
     <!-- footer -->
-     <footer>
-        Footer: Happy coding...
-     </footer>
+    <footer>Footer: Happy coding...</footer>
     <!-- Flow Bite content -->
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <script data-th-src="@{'/js/script.js'}"></script>
     <th:block th:replace="${script}"></th:block>
   </body>
 </html>
