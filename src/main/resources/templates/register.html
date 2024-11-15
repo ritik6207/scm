@@ -16,6 +16,9 @@
           <div
             class="block p-6 border-t-[10px] border-blue-700 bg-white rounded-xl shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-blue-700 dark:hover:bg-gray-700"
           >
+            <!-- Message -->
+            <div th:replace="message :: messagebox"></div>
+
             <h5
               class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
             >
@@ -29,6 +32,7 @@
               data-th-action="@{'/do-register'}"
               th:object="${userForm}"
               method="post"
+              novalidate
             >
               <!-- Name -->
               <div class="mb-3">
@@ -45,6 +49,13 @@
                   placeholder="Enter your name"
                   required
                 />
+
+                <!-- Show validation error message -->
+                <p
+                  th:if="${#fields.hasErrors('name')}"
+                  th:errors="*{name}"
+                  class="text-red-600 px-1 py-2"
+                ></p>
               </div>
               <!-- email field -->
               <div class="mb-3">
@@ -61,6 +72,13 @@
                   placeholder="name@gmail.com"
                   required
                 />
+                <!-- Show validation error message -->
+                <p
+                  th:if="${#fields.hasErrors('email')}"
+                  th:errors="*{email}"
+                  class="text-red-600 px-1 py-2"
+                ></p>
+
               </div>
               <!-- password field -->
               <div class="mb-3">
@@ -76,6 +94,12 @@
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   required
                 />
+                <!-- Show validation error message -->
+                <p
+                  th:if="${#fields.hasErrors('password')}"
+                  th:errors="*{password}"
+                  class="text-red-600 px-1 py-2"
+                ></p>
               </div>
               <!-- phone field -->
               <div class="mb-3">
@@ -91,6 +115,12 @@
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   required
                 />
+                <!-- Show validation error message -->
+                <p
+                  th:if="${#fields.hasErrors('phoneNumber')}"
+                  th:errors="*{phoneNumber}"
+                  class="text-red-600 px-1 py-2"
+                ></p>
               </div>
               <!-- About textArea -->
               <div class="mb-3">
@@ -106,6 +136,12 @@
                   class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Write here..."
                 ></textarea>
+                <!-- Show validation error message -->
+                <p
+                  th:if="${#fields.hasErrors('about')}"
+                  th:errors="*{about}"
+                  class="text-red-600 px-1 py-2"
+                ></p>
               </div>
               <!-- Buttons -->
               <div class="mb-3 flex justify-center space-x-3">
